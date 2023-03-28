@@ -99,8 +99,8 @@ app.use((error, req, res, next) => {
 });
 
 
+const port = process.env.PORT || 3000
 
-
-app.listen(3000, () => {
-    console.log("app open on 3000");
+app.listen(port, () => {
+    console.log(`app open on ${port}`);
 });
