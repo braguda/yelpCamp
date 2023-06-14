@@ -32,8 +32,6 @@ module.exports.createNewCampground = async(req, res) => {
         query: req.body.campground.location,
         limit: 1
     }).send();
-    // console.log(geoData.body.features[0].geometry);
-    // res.send(geoData.body.features[0].geometry);
     let newCamp = new Campground(req.body.campground);
     newCamp.geometry = geoData.body.features[0].geometry;
     newCamp.images = req.files.map(file => ({url: file.path, filename: file.filename}));
